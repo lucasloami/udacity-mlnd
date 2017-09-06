@@ -11802,7 +11802,7 @@ div#notebook {
 </div>
 <div class="cell border-box-sizing code_cell rendered">
 <div class="input">
-<div class="prompt input_prompt">In&nbsp;[4]:</div>
+<div class="prompt input_prompt">In&nbsp;[2]:</div>
 <div class="inner_cell">
     <div class="input_area">
 <div class=" highlight hl-ipython2"><pre><span></span><span class="c1"># Import libraries necessary for this project</span>
@@ -11876,23 +11876,23 @@ div#notebook {
 </div>
 <div class="cell border-box-sizing code_cell rendered">
 <div class="input">
-<div class="prompt input_prompt">In&nbsp;[5]:</div>
+<div class="prompt input_prompt">In&nbsp;[3]:</div>
 <div class="inner_cell">
     <div class="input_area">
 <div class=" highlight hl-ipython2"><pre><span></span><span class="c1"># TODO: Minimum price of the data</span>
-<span class="n">minimum_price</span> <span class="o">=</span> <span class="n">prices</span><span class="o">.</span><span class="n">min</span><span class="p">()</span>
+<span class="n">minimum_price</span> <span class="o">=</span> <span class="n">np</span><span class="o">.</span><span class="n">min</span><span class="p">(</span><span class="n">prices</span><span class="p">)</span>
 
 <span class="c1"># TODO: Maximum price of the data</span>
-<span class="n">maximum_price</span> <span class="o">=</span> <span class="n">prices</span><span class="o">.</span><span class="n">max</span><span class="p">()</span>
+<span class="n">maximum_price</span> <span class="o">=</span> <span class="n">np</span><span class="o">.</span><span class="n">max</span><span class="p">(</span><span class="n">prices</span><span class="p">)</span>
 
 <span class="c1"># TODO: Mean price of the data</span>
-<span class="n">mean_price</span> <span class="o">=</span> <span class="n">prices</span><span class="o">.</span><span class="n">mean</span><span class="p">()</span>
+<span class="n">mean_price</span> <span class="o">=</span> <span class="n">np</span><span class="o">.</span><span class="n">mean</span><span class="p">(</span><span class="n">prices</span><span class="p">)</span>
 
 <span class="c1"># TODO: Median price of the data</span>
-<span class="n">median_price</span> <span class="o">=</span> <span class="n">prices</span><span class="o">.</span><span class="n">median</span><span class="p">()</span>
+<span class="n">median_price</span> <span class="o">=</span> <span class="n">np</span><span class="o">.</span><span class="n">median</span><span class="p">(</span><span class="n">prices</span><span class="p">)</span>
 
 <span class="c1"># TODO: Standard deviation of prices of the data</span>
-<span class="n">std_price</span> <span class="o">=</span> <span class="n">prices</span><span class="o">.</span><span class="n">std</span><span class="p">()</span>
+<span class="n">std_price</span> <span class="o">=</span> <span class="n">np</span><span class="o">.</span><span class="n">std</span><span class="p">(</span><span class="n">prices</span><span class="p">)</span>
 
 <span class="c1"># Show the calculated statistics</span>
 <span class="k">print</span> <span class="s2">&quot;Statistics for Boston housing dataset:</span><span class="se">\n</span><span class="s2">&quot;</span>
@@ -11923,7 +11923,7 @@ Minimum price: $105,000.00
 Maximum price: $1,024,800.00
 Mean price: $454,342.94
 Median price $438,900.00
-Standard deviation of prices: $165,340.28
+Standard deviation of prices: $165,171.13
 </pre>
 </div>
 </div>
@@ -12030,7 +12030,7 @@ MEDV     0.697209 -0.760670 -0.519034  1.000000
 </div>
 <div class="cell border-box-sizing code_cell rendered">
 <div class="input">
-<div class="prompt input_prompt">In&nbsp;[7]:</div>
+<div class="prompt input_prompt">In&nbsp;[4]:</div>
 <div class="inner_cell">
     <div class="input_area">
 <div class=" highlight hl-ipython2"><pre><span></span><span class="c1"># TODO: Import &#39;r2_score&#39;</span>
@@ -12093,7 +12093,7 @@ MEDV     0.697209 -0.760670 -0.519034  1.000000
 </div>
 <div class="cell border-box-sizing code_cell rendered">
 <div class="input">
-<div class="prompt input_prompt">In&nbsp;[8]:</div>
+<div class="prompt input_prompt">In&nbsp;[5]:</div>
 <div class="inner_cell">
     <div class="input_area">
 <div class=" highlight hl-ipython2"><pre><span></span><span class="c1"># Calculate the performance of this model</span>
@@ -12224,8 +12224,8 @@ MEDV     0.697209 -0.760670 -0.519034  1.000000
 </div>
 <div class="inner_cell">
 <div class="text_cell_render border-box-sizing rendered_html">
-<p><strong>Answer: </strong> this strategy allows the data scientist to evaluate the results of a model with a controlled number of data. If the model performs badly in the testing set, the scientist can raise a red flag and reevaluate the model.</p>
-<p>The ratio in the split is used to avoid over or underfitting. Create a testing size bigger than the training set can limit the 'learning process' of your model, since few data points could not represent the entire behavior of the data. This scenario would cause underfitting in the data. On the other hand, if the testing size if really smaller than the training set, your model can 'learn really well' based on training data and the data scientist can boost the parameters in order to get better results in test set, but this last one could not represent the whole behavior of the data. This scenario would cause overfitting in the data.</p>
+<p><strong>Answer: </strong> Splitting the dataset into training and testing sets creates a way to simulate unseen events while data scientist is creating the model. Using part of the dataset as test set allow data scientst to evaluate the performance of the model using information that didn't exist when the model was created.</p>
+<p>This is important specially if acquiring more data (unseen events) is a hard task and there is still the need to check if the model has a good behavior. Moreover, using a test set is helpful on identifying overfitting, since this behavior is characterized by good results in training data but bad results in test data (the model didn't "learn", it just "memorized")</p>
 
 </div>
 </div>
@@ -13315,8 +13315,9 @@ Think about the pros and cons of adding more training points based on if the tra
 </div>
 <div class="inner_cell">
 <div class="text_cell_render border-box-sizing rendered_html">
-<p><strong>Answer: </strong> I chose the figure with <code>max_depth=10</code>. In this case, the model seems to overfit the data, because the more training points we add, the training's score doesn't change, on the other hand, the test's score decreases but not in a level in which both curves stay close to each other.</p>
-<p>In this scenario, add more training points would decrease the overfitting effect because it would add diversity. The model would become more general due to being trained on more examples. This is a good strategy because algorithms like decision trees don't have regularization terms, that penalizes the complexity of the algorithm and help to generalize better the data behavior.</p>
+<p><strong>Answer: </strong> I chose the figure with <code>max_depth=10</code>. In this case, the model seems to overfit the data, because the curves don't seem to be converging to an optimal  point, such as in the example with <code>max_depth=3</code>.</p>
+<p>It's possible to realize from the chart that adding more training points would not create big changes in training curve (it slightly decreases). On the other hand, it seems that testing curve converged to an optimal point (some value between 0,6 and 0,7), therefore, add more points would not change this behavior.</p>
+<p>Moreover, get more data is sometimes hard in the real world. With the data we already have, it's possible to see the training and testing curves converging to optimal points.</p>
 
 </div>
 </div>
